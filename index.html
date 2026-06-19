@@ -770,7 +770,6 @@
 <!-- HOME -->
 <section id="home">
   <div class="hero-diagonal"></div>
-  <div class="hero-gold-slash"></div>
   <div class="hero-inner">
     <div class="hero-content">
       <p class="hero-eyebrow">San Jose, CA &mdash; South Bay Exterior Cleaning Specialists</p>
@@ -800,31 +799,36 @@
     <div class="hero-form-wrap">
       <div class="hero-form">
         <h3>Get a Free Quote</h3>
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" id="hero-name" placeholder="John Smith" />
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="(555) 000-0000" />
-        </div>
-        <div class="form-group">
-          <label>Service Needed</label>
-          <select>
-            <option value="">Select a service...</option>
-            <option>Solar Panel Cleaning</option>
-            <option>Window Cleaning</option>
-            <option>Gutter Cleaning</option>
-            <option>General Cleaning</option>
-            <option>Power Washing</option>
-            <option>Multiple / Not Sure</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Tell us about your property and what you need done..."></textarea>
-        </div>
-        <button class="form-submit" id="heroFormSubmitBtn">Send Request</button>
+        <form action="https://formsubmit.co/gregjpdolan@gmail.com" method="POST" id="heroQuoteForm">
+          <input type="hidden" name="_subject" value="New Quote Request — Dolan's Exterior Solutions" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="Name" id="hero-name" placeholder="John Smith" required />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="Phone" placeholder="(555) 000-0000" required />
+          </div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select name="Service Needed">
+              <option value="">Select a service...</option>
+              <option>Solar Panel Cleaning</option>
+              <option>Window Cleaning</option>
+              <option>Gutter Cleaning</option>
+              <option>General Cleaning</option>
+              <option>Power Washing</option>
+              <option>Multiple / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="Message" placeholder="Tell us about your property and what you need done..."></textarea>
+          </div>
+          <button class="form-submit" type="submit">Send Request</button>
+        </form>
         <div class="hero-contact-info">
           <a href="tel:8318013874" class="hero-contact-item">
             <span class="hero-contact-icon">📞</span>
@@ -988,31 +992,36 @@
 
     <div class="contact-form">
       <h3>Send Us a Message</h3>
-      <div class="form-group">
-        <label>Your Name</label>
-        <input type="text" placeholder="John Smith" />
-      </div>
-      <div class="form-group">
-        <label>Phone Number</label>
-        <input type="tel" placeholder="(555) 000-0000" />
-      </div>
-      <div class="form-group">
-        <label>Service Needed</label>
-        <select>
-          <option value="">Select a service...</option>
-          <option>Solar Panel Cleaning</option>
-          <option>Window Cleaning</option>
-          <option>Gutter Cleaning</option>
-          <option>General Cleaning</option>
-          <option>Power Washing</option>
-          <option>Multiple / Not Sure</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Message</label>
-        <textarea placeholder="Tell us about your property and what you need done..."></textarea>
-      </div>
-      <button class="form-submit" id="formSubmitBtn">Send Request</button>
+      <form action="https://formsubmit.co/gregjpdolan@gmail.com" method="POST" id="contactQuoteForm">
+        <input type="hidden" name="_subject" value="New Quote Request — Dolan's Exterior Solutions" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="Name" placeholder="John Smith" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="Phone" placeholder="(555) 000-0000" required />
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select name="Service Needed">
+            <option value="">Select a service...</option>
+            <option>Solar Panel Cleaning</option>
+            <option>Window Cleaning</option>
+            <option>Gutter Cleaning</option>
+            <option>General Cleaning</option>
+            <option>Power Washing</option>
+            <option>Multiple / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="Message" placeholder="Tell us about your property and what you need done..."></textarea>
+        </div>
+        <button class="form-submit" type="submit">Send Request</button>
+      </form>
     </div>
   </div>
 </section>
@@ -1067,21 +1076,6 @@
     if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
       menu.classList.remove('open');
     }
-  });
-
-  document.getElementById('heroFormSubmitBtn').addEventListener('click', function() {
-    const name = document.getElementById('hero-name').value.trim();
-    if (!name) { alert('Please enter your name.'); return; }
-    alert('Thanks ' + name + "! We'll be in touch soon.\n\nFor immediate help, call (831) 801-3874.");
-  });
-
-  document.getElementById('formSubmitBtn').addEventListener('click', function() {
-    const name = document.querySelector('.contact-form input[type="text"]').value.trim();
-    if (!name) {
-      alert('Please enter your name.');
-      return;
-    }
-    alert('Thanks ' + name + "! We'll be in touch soon.\n\nFor immediate help, call (831) 801-3874.");
   });
 </script>
 </body>
